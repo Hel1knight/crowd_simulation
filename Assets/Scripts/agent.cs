@@ -24,10 +24,7 @@ public class Agent : MonoBehaviour
             if (agent.CalculatePath(destination[i].transform.position, path))
             {
 
-                while (agent.pathPending)
-                {
-                    yield return 0;
-                }
+               
 
                 if (path.status == UnityEngine.AI.NavMeshPathStatus.PathComplete)
                 {
@@ -38,18 +35,31 @@ public class Agent : MonoBehaviour
         for(int j = 0; j < SelectedPath.Count; j++)
         {
             agent.SetPath(SelectedPath[j]);
-            Debug.Log(agent.remainingDistance);
-            if (agent.remainingDistance < minDistance)
+            while (agent.pathPending)
+            {
+                yield return 0;
+            }
+            float distance = GetDistance();
+            if (distance < minDistance)
             {
                 minTarget = j;
-                minDistance = agent.remainingDistance;
+                minDistance = distance;
             }
         }
-        Debug.Log(minTarget);
-        agent.destination = destination[minTarget].transform.position;
+        
+        agent.SetPath(SelectedPath[minTarget]);
         agent.isStopped = false;
     }
+    public float GetDistance()
+    {
+        float distance = 0.0f;
+        for (int i = 0; i < agent.path.corners.Length - 1; ++i)
+        {
+            distance += Vector3.Distance(agent.path.corners[i], agent.path.corners[i + 1]);
+        }
+        return distance;
 
+    }
     private void Start()
     {
         agent = GetComponent<UnityEngine.AI.NavMeshAgent>();

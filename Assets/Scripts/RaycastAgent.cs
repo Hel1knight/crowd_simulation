@@ -40,6 +40,7 @@ public class RaycastAgent : MonoBehaviour
         rend.material.color = Color.red;
         transform.gameObject.tag = "Alerte";
         this.GetComponent<Agent>().enabled = true;
+        StartCoroutine(this.GetComponent<Agent>().ComputePath());
     }
 
     void Update()

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Generate : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class Generate : MonoBehaviour
     public RaycastHit hit;
     public Ray ray;
     public LayerMask FloorMask;
+   
     void Start()
     {
         rend = GetComponent<Renderer>();

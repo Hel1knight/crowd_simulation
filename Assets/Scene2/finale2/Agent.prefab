@@ -143,12 +143,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7834694457661013777}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f7468a07d9a5c4a42bf2e173b91df4c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goal: {fileID: 3871716935665997699, guid: 096f64424af751c4a830c708b59128d3, type: 3}
+  destination: []
 --- !u!114 &-609378375740759778
 MonoBehaviour:
   m_ObjectHideFlags: 0

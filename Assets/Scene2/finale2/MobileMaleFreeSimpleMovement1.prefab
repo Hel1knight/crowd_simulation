@@ -1301,7 +1301,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4274868087642060}
-  - component: {fileID: 54704068080705314}
   - component: {fileID: 136943970358897604}
   - component: {fileID: 95541723052833158}
   - component: {fileID: 114882824916184338}
@@ -1332,22 +1331,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54704068080705314
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1997953001238138}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 5
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!136 &136943970358897604
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1397,7 +1380,7 @@ MonoBehaviour:
   m_turnSpeed: 200
   m_jumpForce: 4
   m_animator: {fileID: 95541723052833158}
-  m_rigidBody: {fileID: 54704068080705314}
+  m_rigidBody: {fileID: 0}
   m_controlMode: 0
 --- !u!114 &176494067677919543
 MonoBehaviour:
@@ -1436,7 +1419,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1997953001238138}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.2
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 99

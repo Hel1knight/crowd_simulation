@@ -34,14 +34,14 @@ public class Generate : MonoBehaviour
         {
             for (int i = 0; i <= 15; i++)
             {
-                float x = Random.Range(-5, 5);
-                float y = Random.Range(-5, 5);
+                float x = Random.Range(0, 10);
+                float y = Random.Range(0, 10);
                 Instantiate(Agent, new Vector3(x, 0, y), Quaternion.Euler(0, Random.Range(0, 90), 0));
             }
         }
         ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Vector3 mouse = Input.mousePosition;
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {   
             if (Physics.Raycast(ray, out hit,Mathf.Infinity, FloorMask))
             {
